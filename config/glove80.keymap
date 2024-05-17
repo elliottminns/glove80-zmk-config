@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2020 The ZMK Contributors
  * Copyright (c) 2023 Innaworks Development Limited, trading as MoErgo
@@ -264,13 +263,33 @@
 
 /* Custom Defined Behaviors */
 / {
+    behaviors {
+      lh_pht: home_row_left_mod_tap {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <150>;
+        quick-tap-ms = <200>;
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <6 7 8 9 10 11>;
+      };
 
+      rh_pht: home_row_right_mod_tap {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <150>;
+        quick-tap-ms = <200>;
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <0 1 2 3 4 5>;
+      };
+    };
 };
 
 /* Automatically generated macro definitions */
 / {
     macros {
-    
+
     };
 };
 
@@ -285,7 +304,7 @@
         &kp F1      &kp F2    &kp F3        &kp F4        &kp F5                                                                                              &kp F6     &kp F7    &kp F8    &kp F9        &kp F10
      &kp EQUAL      &kp N1    &kp N2        &kp N3        &kp N4  &kp N5                                                                              &kp N6  &kp N7     &kp N8    &kp N9    &kp N0      &kp MINUS
        &kp TAB       &kp Q     &kp W         &kp E         &kp R   &kp T                                                                               &kp Y   &kp U      &kp I     &kp O     &kp P       &kp BSLH
- &mt LCTRL ESC       &kp A     &kp S         &kp D         &kp F   &kp G                                                                               &kp H   &kp J      &kp K     &kp L  &kp SEMI  &mt RCTRL SQT
+ &mt LCTRL ESC       &lh_pht LGUI A     &lh_pht LALT S         &lh_pht LSHFT D         &lh_pht LCTRL F   &kp G                                                                               &kp H   &rh_pht RCTRL J      &rh_pht RSHIFT K     &rh_pht RALT L  &rh_pht RGUI SEMI  &kp SQT
      &kp LSHFT  &mt LALT Z     &kp X         &kp C         &kp V   &kp B    &kp LSHFT  &magic LAYER_Magic 0    &lower  &kp LGUI  &kp RALT  &kp RSHFT   &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH      &kp PG_UP
      &kp GRAVE    &kp LBKT  &kp RBKT  &kp LS(LBKT)  &kp LS(RBKT)          &lt 1 SPACE              &kp BSPC  &kp LGUI  &kp RGUI   &kp DEL  &lt 3 RET          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT      &kp PG_DN
             >;
