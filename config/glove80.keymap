@@ -272,6 +272,7 @@
         quick-tap-ms = <200>;
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <6 7 8 9 10 11>;
+        hold-trigger-on-release;
       };
 
       rh_pht: home_row_right_mod_tap {
@@ -282,6 +283,7 @@
         quick-tap-ms = <200>;
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <0 1 2 3 4 5>;
+        hold-trigger-on-release;
       };
     };
 };
